@@ -1,66 +1,58 @@
-
 from asyncio import sleep
 
-
 print("*** Arvude mäng ***")
-print()
-#название игры
-while 1:
+
+# Kasutajalt numbri taotlemine
+while True:
     try:
-        a=abs(int(input("Sisesta täisarv => ")))
+        a = abs(int(input("Sisesta täisarv => ")))
         break
     except ValueError:
-         print("See ei ole täisarv")
-#введение числа
-if a==0:
-    print("Nulliga on mõttetu töö")
+        print("See ei ole täisarv")
+
+# Kontrollida, kas number ei ole null
+if a == 0:
+    print("Nulliga on mõttetu töötada")
 else:
-#---
-    print("Loendame, mitu on paaris ja mitu paaritu arvu")
-    print()
-    c=b=a
-    paaris=0
-    paaritu=0
+    print("Loendame, mitu on paaris ja mitu paaritut arvu")
+    c = b = a
+    paaris = 0
+    paaritu = 0
     while b > 0:
-            if b % 2 == 0:
-                    paaris =+ 1
-            else:
-                    paaritu =+ 1
-            b = b//10
-    print(f"Paaris arvude kogus:{paaris}")
-    print(f"Paaritu on:{paaritu}")
+        if b % 2 == 0: 
+            paaris += 1
+        else:
+            paaritu += 1
+        b = b // 10
+    print(f"Paaris arvude kogus: {paaris}")
+    print(f"Paaritute arvude kogus: {paaritu}")
     print()
-#'''
-    print("*Ümberpöörame* sisestatud arv")
-    print()
-    b=0
+    # kui palju paaris- ja paarituid arve
+    print("*Ümberpöörame* sisestatud arvu")
+    b = 0
     while a > 0:
         number = a % 10
         a = a // 10
-        b = b * 10
-        b =+ number
-    print("*Ümberpööratud", b)
-    print()
-#''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    print("Tõestame teoreem")
-    print()
+        b = b * 10 + number
+    print(f"*Ümberpööratud* arv: {b}")
+    #ümberpöörates 
+    print("Tõestame teoreemi")
     if c % 2 == 0:
-        print("с - Paaris arv, Jagame 2")
+        print("c - Paaris arv, jagame 2")
     else:
-        print("с - Paaritu arv.Korrutame 3, liidame 1 ja jagame 2.")
-    for i in range(50):
-        print(">", end="")
-        sleep(0.5)
-    print()
+        print("c - Paaritu arv. Korrutame 3, liidame 1 ja jagame 2.")
     while c != 1:
         sleep(1)
         if c % 2 == 0:
             print('{:>4}'.format(round(c)),"с - Paaris arv, Jagame 2")
-            c == c / 2
-            else:
-                    c == (3*c + 1) / 2
-            print("c, end=")
+            c //= 2 
+        else:
+            print('{:>4}'.format(round(c)),"с - Paaritu arv.Korrutame 3, liidame 1 ja jagame 2.")
+            c = (3 * c + 1) // 2  
+            print(c, end=" ")
     print()
-    print("Гипотеза верна")
+    print("Teoreem on tõestatud")
+
+
 
    
