@@ -1,4 +1,4 @@
-from asyncio import sleep
+
 
 print("*** Arvude mäng ***")
 
@@ -42,7 +42,6 @@ else:
     else:
         print("c - Paaritu arv. Korrutame 3, liidame 1 ja jagame 2.")
     while c != 1:
-        sleep(1)
         if c % 2 == 0:
             print('{:>4}'.format(round(c)),"с - Paaris arv, Jagame 2")
             c //= 2 
